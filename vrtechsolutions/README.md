@@ -16,3 +16,4 @@ npm i
 npm install react-redux
 npm install redux react-redux @reduxjs/toolkit
 npm install tailwindcss @tailwindcss/vite
+npm install framer-motion
