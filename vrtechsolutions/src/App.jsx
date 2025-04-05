@@ -1,9 +1,9 @@
-// App.jsx
 import { useRef } from 'react';
 import Home from './components/Home';
 import Services from './components/Services';
 import About from './components/About';
 import Contact from './components/Contact';
+import logo from './assets/logo.jpg'; // Corrected the import path (removed the leading dot)
 
 function App() {
   // Create refs for each section
@@ -25,7 +25,13 @@ function App() {
           <div className="flex justify-between h-16">
             <div className="flex">
               <div className="flex-shrink-0 flex items-center">
-                <h1 className="text-xl font-bold">Logo</h1>
+                <a href="/">
+                  <img
+                    src={logo}
+                    alt="VR Tech Solutions Logo"
+                    className="h-15 w-auto" // Adjust height as needed
+                  />
+                </a>
               </div>
             </div>
             <div className="flex items-center">
