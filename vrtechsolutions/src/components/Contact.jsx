@@ -20,7 +20,7 @@ function Contact() {
               </div>
               <div>
                 <h3 className="text-lg font-medium text-gray-900">Email</h3>
-                <p className="text-gray-600">info@vrtechsolutions.com</p>
+                <p className="text-gray-600">vrtechsolutions32@gmail.com</p>
               </div>
             </div>
             
@@ -32,7 +32,7 @@ function Contact() {
               </div>
               <div>
                 <h3 className="text-lg font-medium text-gray-900">Phone</h3>
-                <p className="text-gray-600">+1 (555) 123-4567</p>
+                <p className="text-gray-600">+91-8351873002, +91-7710062969</p>
               </div>
             </div>
             
