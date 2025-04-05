@@ -7,6 +7,7 @@ import logo from './assets/logo.jpg';
 
 function App() {
   const [activeSection, setActiveSection] = useState('intro');
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // State for mobile menu
 
   // Section refs
   const introRef = useRef(null);
@@ -26,6 +27,7 @@ function App() {
     });
     
     setActiveSection(section);
+    setIsMenuOpen(false); // Close mobile menu after clicking
   };
 
   // Change active section on scroll with improved intersection detection
@@ -76,20 +78,42 @@ function App() {
       {/* Navbar */}
       <nav className="fixed top-0 w-full bg-white shadow-md z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
+          <div className="flex justify-between h-16 items-center">
             <div className="flex items-center">
               <a href="#" onClick={(e) => {
                 e.preventDefault();
                 scrollToSection(introRef, 'intro');
-              }}>
-                <img src={logo} alt="Logo" className="h-12 w-auto" />
+              }} className="flex items-center space-x-1 no-gap">
+                <img src={logo} alt="VR Tech Solutions Logo" className="h-10 w-auto" />
+                <span className="text-xl font-bold text-gray-900">VR Tech Solutions</span>
               </a>
             </div>
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center md:hidden">
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="text-gray-700 hover:text-purple-600 focus:outline-none"
+              >
+                <svg
+                  className="h-6 w-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d={isMenuOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16m-7 6h7'}
+                  />
+                </svg>
+              </button>
+            </div>
+            <div className="hidden md:flex items-center space-x-4">
               {[
                 { label: 'Home', ref: homeRef, key: 'home' },
                 { label: 'Services', ref: servicesRef, key: 'services' },
-                { label: 'Contact', ref: contactRef, key: 'contact' }
+                { label: 'Contact', ref: contactRef, key: 'contact' },
               ].map(({ label, ref, key }) => (
                 <button
                   key={key}
@@ -105,6 +129,28 @@ function App() {
               ))}
             </div>
           </div>
+          {/* Mobile Menu */}
+          {isMenuOpen && (
+            <div className="md:hidden bg-white shadow-md py-2">
+              {[
+                { label: 'Home', ref: homeRef, key: 'home' },
+                { label: 'Services', ref: servicesRef, key: 'services' },
+                { label: 'Contact', ref: contactRef, key: 'contact' },
+              ].map(({ label, ref, key }) => (
+                <button
+                  key={key}
+                  onClick={() => scrollToSection(ref, key)}
+                  className={`block w-full text-left px-4 py-2 text-sm font-medium transition-colors duration-200 ${
+                    activeSection === key
+                      ? 'text-purple-700'
+                      : 'text-gray-700 hover:text-purple-600'
+                  }`}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
       </nav>
 
