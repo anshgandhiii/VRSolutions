@@ -7,23 +7,21 @@ import { motion } from 'framer-motion';
 
 function Services() {
   useEffect(() => {
-    // Initialize animation observer
     const animateOnScroll = () => {
       const elements = document.querySelectorAll('.service-card');
-      
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-in');
-          }
-        });
-      }, { threshold: 0.1 });
-      
-      elements.forEach(el => observer.observe(el));
-      
-      return () => elements.forEach(el => observer.unobserve(el));
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate-in');
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+      elements.forEach((el) => observer.observe(el));
+      return () => elements.forEach((el) => observer.unobserve(el));
     };
-    
     animateOnScroll();
   }, []);
 
@@ -32,32 +30,32 @@ function Services() {
       title: 'Data Analysis',
       description: 'Transform raw drone data into actionable insights with our advanced analytics services. We create comprehensive reports that help you make informed decisions.',
       image: dataAnalysisImage,
-      features: ['Drone data processing', 'Statistical analysis', 'Interactive visualizations', 'Trend identification']
+      features: ['Drone data processing', 'Statistical analysis', 'Interactive visualizations', 'Trend identification'],
     },
     {
       title: 'Creative Design',
       description: 'Elevate your brand with our professional design services. From workshop materials to abstract designs, we create visually stunning assets that capture attention.',
       image: designWorksImage,
-      features: ['Workshop booklets', 'Marketing materials', 'Abstract designs', 'Brand identity']
+      features: ['Workshop booklets', 'Marketing materials', 'Abstract designs', 'Brand identity'],
     },
     {
       title: 'AI/ML Projects',
       description: 'Harness the power of artificial intelligence and machine learning with our custom solutions. We build intelligent systems that solve complex problems.',
       image: researchProjectsImage,
-      features: ['Custom AI models', 'ML algorithm development', 'Predictive analytics', 'Computer vision']
+      features: ['Custom AI models', 'ML algorithm development', 'Predictive analytics', 'Computer vision'],
     },
     {
       title: 'Academic Consultation',
       description: 'Get expert guidance on your academic endeavors. Our team provides comprehensive support for research projects, article writing, and academic development.',
       image: academicConsultationImage,
-      features: ['Research problem identification', 'Article writing & editing', 'Methodology guidance', 'Literature review']
+      features: ['Research problem identification', 'Article writing & editing', 'Methodology guidance', 'Literature review'],
     },
   ];
 
   return (
-    <section id="services" className="py-32 px-8 bg-white">
+    <section id="services" className="py-16 px-8 bg-white">
       <div className="max-w-6xl mx-auto">
-        <motion.div 
+        <motion.div
           className="text-center mb-24"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -83,7 +81,7 @@ function Services() {
               transition={{ duration: 0.6, delay: index * 0.15 }}
               whileHover={{ y: -12, transition: { duration: 0.3 } }}
             >
-              <div className="h-56 overflow-hidden relative">
+              <div className="h-40 overflow-hidden relative">
                 <img
                   src={service.image}
                   alt={service.title}
@@ -94,24 +92,19 @@ function Services() {
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                <h3 className="absolute bottom-6 left-6 text-2xl font-bold text-white">
-                  {service.title}
-                </h3>
+                <h3 className="absolute bottom-6 left-6 text-2xl font-bold text-white">{service.title}</h3>
               </div>
-              
-              <div className="p-8">
-                <p className="text-gray-600 mb-6">
-                  {service.description}
-                </p>
+              <div className="p-6">
+                <p className="text-gray-600 mb-6 text-base">{service.description}</p>
                 <ul className="space-y-3">
                   {service.features.map((feature, i) => (
-                    <motion.li 
-                      key={i} 
-                      className="flex items-center text-gray-700"
+                    <motion.li
+                      key={i}
+                      className="flex items-center text-gray-700 text-sm"
                       initial={{ opacity: 0, x: -10 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
-                      transition={{ delay: 0.3 + (i * 0.1) }}
+                      transition={{ delay: 0.3 + i * 0.1 }}
                     >
                       <svg className="h-5 w-5 mr-3 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
