@@ -8,60 +8,96 @@ function Services() {
   const services = [
     {
       title: 'Data Analysis',
-      description: 'Drone data, project data analysis, and report creation.',
+      description: 'Transform raw drone data into actionable insights with our advanced analytics services. We create comprehensive reports that help you make informed decisions.',
       image: dataAnalysisImage,
+      features: ['Drone data processing', 'Statistical analysis', 'Interactive visualizations', 'Trend identification']
     },
     {
       title: 'Creative Design',
-      description: 'Workshop booklets, abstract designs, event materials.',
+      description: 'Elevate your brand with our professional design services. From workshop materials to abstract designs, we create visually stunning assets that capture attention.',
       image: designWorksImage,
+      features: ['Workshop booklets', 'Marketing materials', 'Abstract designs', 'Brand identity']
     },
     {
       title: 'AI/ML Projects',
-      description: 'Custom AI/ML solutions.',
+      description: 'Harness the power of artificial intelligence and machine learning with our custom solutions. We build intelligent systems that solve complex problems.',
       image: researchProjectsImage,
+      features: ['Custom AI models', 'ML algorithm development', 'Predictive analytics', 'Computer vision']
     },
     {
       title: 'Academic Consultation',
-      description: 'Research problem identification, article writing/editing, academic guidance.',
+      description: 'Get expert guidance on your academic endeavors. Our team provides comprehensive support for research projects, article writing, and academic development.',
       image: academicConsultationImage,
+      features: ['Research problem identification', 'Article writing & editing', 'Methodology guidance', 'Literature review']
     },
   ];
 
   return (
-    <section className="bg-gray-100 py-20 px-4">
-      <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600 mb-16">
-          Our Services
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <section className="py-20 px-4 bg-white">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">Our Services</span>
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            We offer a comprehensive suite of services designed to help you leverage the power of data, design, and AI to achieve your goals.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white shadow-xl rounded-2xl overflow-hidden hover:shadow-2xl transition-shadow duration-300 border border-gray-200"
+              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 transform hover:-translate-y-2"
             >
-              <div className="h-52 overflow-hidden">
+              <div className="h-48 overflow-hidden relative">
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                   onError={(e) => {
                     e.target.onerror = null;
                     e.target.src = 'https://via.placeholder.com/300x200?text=Image+Unavailable';
                   }}
                 />
-              </div>
-              <div className="p-6 text-left">
-                <h3 className="text-xl font-semibold text-purple-700 mb-2">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                <h3 className="absolute bottom-4 left-4 text-xl font-bold text-white">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
+              </div>
+              
+              <div className="p-6">
+                <p className="text-gray-600 text-sm mb-4">
                   {service.description}
                 </p>
+                <ul className="space-y-2">
+                  {service.features.map((feature, i) => (
+                    <li key={i} className="flex items-center text-sm text-gray-700">
+                      <svg className="h-4 w-4 mr-2 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           ))}
         </div>
+        
+        {/* CTA Section */}
+        {/* <div className="mt-20 bg-purple-50 rounded-2xl p-8 md:p-12 text-center">
+          <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900">Ready to Transform Your Ideas?</h3>
+          <p className="text-gray-700 mb-8 max-w-2xl mx-auto">
+            Let's collaborate to bring your vision to life with our expertise in data analysis, design, and AI technology.
+          </p>
+          <a 
+            href="#contact" 
+            className="inline-block px-8 py-3 bg-purple-600 text-white font-medium rounded-lg shadow-md hover:bg-purple-700 transition duration-300"
+          >
+            Get Started Today
+          </a>
+        </div> */}
       </div>
     </section>
   );
