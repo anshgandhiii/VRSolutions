@@ -29,10 +29,6 @@ function Contact() {
               required
               className="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
             ></textarea>
-  
-            {/* Optional: Redirect to a thank-you page after form submission */}
-            {/* <input type="hidden" name="_redirect" value="https://yourwebsite.com/thank-you" /> */}
-  
             <button
               type="submit"
               className="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition-colors duration-200"
