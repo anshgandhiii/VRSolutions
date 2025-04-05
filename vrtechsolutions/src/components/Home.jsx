@@ -62,12 +62,12 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-24">
+    <div className="min-h-screen flex flex-col justify-center bg-gradient-to-b from-white to-purple-50 py-16">
       {/* Features Section */}
-      <section className="py-16 px-8 bg-white">
+      <section className="py-16 px-8 bg-white shadow-md">
         <div className="max-w-6xl mx-auto">
           <motion.h2
-            className="text-4xl font-bold text-center mb-16 text-gray-900"
+            className="text-4xl font-bold text-center mb-12 text-gray-900"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -93,8 +93,12 @@ const Home = () => {
                 >
                   {item.icon}
                 </motion.div>
-                <h3 className="text-2xl font-semibold mb-4 text-gray-900">{item.title}</h3>
-                <p className="text-lg text-gray-700">{item.description}</p>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-900">
+                  {item.title}
+                </h3>
+                <p className="text-lg text-gray-700">
+                  {item.description}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -103,39 +107,25 @@ const Home = () => {
 
       {/* Stats Section */}
       <motion.section
-        className="py-12 px-8 bg-purple-700 text-white"
+        className="py-12 bg-purple-700 text-white shadow-xl"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 0.7 }}
       >
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-16 text-center">
-            <motion.div
-              className="p-6"
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <div className="text-4xl md:text-5xl font-bold mb-4">Experienced Team Members</div>
-              <p className="text-xl mt-4">
-                Our team comprises seasoned professionals with a proven track record in academia and industry.
-              </p>
-            </motion.div>
-            <motion.div
-              className="p-6"
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              <div className="text-4xl md:text-5xl font-bold mb-4">Collaborating with Top Institutes</div>
-              <p className="text-xl mt-4">
-                Currently working with prestigious institutions including NIT Surat, NIT Calicut, NIT Tiruchirappalli, and Mahindra University, Hyderabad.
-              </p>
-            </motion.div>
-          </div>
+        <div className="max-w-6xl mx-auto text-center px-8">
+          <motion.div
+            className="py-6"
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <div className="text-3xl md:text-4xl font-bold mb-6">Collaborating with Top Institutes</div>
+            <p className="text-xl md:text-2xl mt-4 max-w-4xl mx-auto">
+              Currently working with prestigious institutions including NIT Surat, NIT Calicut, NIT Tiruchirappalli, and Mahindra University, Hyderabad.
+            </p>
+          </motion.div>
         </div>
       </motion.section>
     </div>
