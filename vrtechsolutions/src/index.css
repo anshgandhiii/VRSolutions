@@ -144,6 +144,12 @@
     font-size: 0.9rem;
     color: #E5E7EB;
   }
+  /* Add to index.css or inline */
+.no-gap {
+    margin-left: -2px; /* Fine-tune negative margin to remove gap */
+    display: flex;
+    align-items: center;
+  }
   
   @media (max-width: 768px) {
     .navbar {

@@ -104,16 +104,7 @@ function Contact() {
               transition={{ duration: 0.5, delay: 0.6 }}
               whileHover={{ x: 10, transition: { duration: 0.2 } }}
             >
-              <div className="bg-purple-100 p-4 rounded-full mr-6">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-purple-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-              </div>
-              <div>
-                <h3 className="text-xl font-medium text-gray-900 mb-1">Location</h3>
-                <p className="text-lg text-gray-600">123 Innovation Drive, Tech City, TC 12345</p>
-              </div>
+              
             </motion.div>
           </div>
           
@@ -208,7 +199,7 @@ function Contact() {
                   type="text"
                   id="name"
                   name="name"
-                  placeholder="John Doe"
+                  placeholder="Abhishek Sharma"
                   required
                   value={formState.name}
                   onChange={handleChange}
@@ -227,7 +218,7 @@ function Contact() {
                   type="email"
                   id="email"
                   name="email"
-                  placeholder="john@example.com"
+                  placeholder="abhishek@example.com"
                   required
                   value={formState.email}
                   onChange={handleChange}
@@ -263,7 +254,7 @@ function Contact() {
                 <textarea
                   id="message"
                   name="message"
-                  placeholder="Tell us about your project or inquiry..."
+                  placeholder="Tell us about your inquiry..."
                   rows="5"
                   required
                   value={formState.message}
