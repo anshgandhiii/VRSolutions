@@ -84,20 +84,7 @@ function Services() {
             </div>
           ))}
         </div>
-        
-        {/* CTA Section */}
-        {/* <div className="mt-20 bg-purple-50 rounded-2xl p-8 md:p-12 text-center">
-          <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900">Ready to Transform Your Ideas?</h3>
-          <p className="text-gray-700 mb-8 max-w-2xl mx-auto">
-            Let's collaborate to bring your vision to life with our expertise in data analysis, design, and AI technology.
-          </p>
-          <a 
-            href="#contact" 
-            className="inline-block px-8 py-3 bg-purple-600 text-white font-medium rounded-lg shadow-md hover:bg-purple-700 transition duration-300"
-          >
-            Get Started Today
-          </a>
-        </div> */}
+
       </div>
     </section>
   );

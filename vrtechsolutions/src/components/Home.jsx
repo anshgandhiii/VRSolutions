@@ -53,13 +53,19 @@ const Home = () => {
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 text-center">
       <div className="p-4">
         <div className="text-3xl md:text-4xl font-bold mb-2">
-         Experienced Team Members
+          Experienced Team Members
         </div>
+        <p className="text-lg mt-2">
+          Our team comprises seasoned professionals with a proven track record in academia and industry.
+        </p>
       </div>
       <div className="p-4">
         <div className="text-3xl md:text-4xl font-bold mb-2">
-          Working with NITs &amp; IITs
+          Collaborating with Top Institutes
         </div>
+        <p className="text-lg mt-2">
+          Currently working with prestigious institutions including NIT Surat, NIT Calicut, NIT Tiruchirappalli, and Mahindra University, Hyderabad.
+        </p>
       </div>
     </div>
   </div>
