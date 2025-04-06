@@ -22,7 +22,7 @@ const Home = () => {
         </svg>
       ),
       title: 'Advanced Analytics',
-      description: 'Leverage AI-powered insights to transform raw data into actionable intelligence.',
+      description: 'Leverage AI-powered insights for actionable intelligence.',
     },
     {
       icon: (
@@ -42,7 +42,7 @@ const Home = () => {
         </svg>
       ),
       title: 'Creative Excellence',
-      description: 'Stunning designs that blend aesthetics with functionality for maximum impact.',
+      description: 'Stunning designs blending aesthetics with functionality.',
     },
     {
       icon: (
@@ -57,7 +57,7 @@ const Home = () => {
         </svg>
       ),
       title: 'Rapid Delivery',
-      description: 'Quick turnaround times without compromising on quality or attention to detail.',
+      description: 'Quick turnarounds with uncompromising quality.',
     },
   ];
 
@@ -73,7 +73,7 @@ const Home = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            Why Choose Us
+            “Our mission is to deliver precision in data and perfection in design, powered by AI.”.
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {featureItems.map((item, index) => (

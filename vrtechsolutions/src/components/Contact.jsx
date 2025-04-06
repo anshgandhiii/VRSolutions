@@ -174,7 +174,7 @@ function Contact() {
             </motion.div>
           ) : (
             <form
-              action="https://formspree.io/f/xvgkwjqe"
+              action="https://formspree.io/f/xzzekbrj"
               method="POST"
               className="space-y-4"
               onSubmit={handleSubmit}
