@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import drone from '../assets/drone.png';
+// The drone import is removed as it's not used in this specific component anymore.
+// If it was used for something else, ensure the path is correct:
+// import drone from '../assets/drone.png'; // Path relative to src/components/
 
-const Home = () => {
+const Home = () => { // This is your original Home.jsx content (features/stats)
   const featureItems = [
     {
       icon: (
@@ -62,7 +64,8 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col justify-center bg-gradient-to-b from-white to-purple-50 py-16">
+    // Removed min-h-screen and justify-center as this component is part of a larger page.
+    <div className="bg-gradient-to-b from-white to-purple-50 py-16">
       {/* Features Section */}
       <section className="py-16 px-8 bg-white shadow-md">
         <div className="max-w-6xl mx-auto">
@@ -73,7 +76,7 @@ const Home = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            “Our mission is to deliver precision in data and perfection in design, powered by AI.”.
+            “Our mission is to deliver precision in data and perfection in design, powered by AI.”
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {featureItems.map((item, index) => (
@@ -87,16 +90,16 @@ const Home = () => {
                 whileHover={{ y: -10, transition: { duration: 0.2 } }}
               >
                 <motion.div
-                  className="bg-purple-100 rounded-full w-20 h-20 flex items-center justify-center mb-6"
+                  className="bg-purple-100 rounded-full w-20 h-20 flex items-center justify-center mb-6 mx-auto" // Added mx-auto
                   whileHover={{ rotate: 5, scale: 1.05 }}
                   transition={{ type: 'spring', stiffness: 300 }}
                 >
                   {item.icon}
                 </motion.div>
-                <h3 className="text-2xl font-semibold mb-4 text-gray-900">
+                <h3 className="text-2xl font-semibold mb-4 text-gray-900 text-center"> {/* Added text-center */}
                   {item.title}
                 </h3>
-                <p className="text-lg text-gray-700">
+                <p className="text-lg text-gray-700 text-center"> {/* Added text-center */}
                   {item.description}
                 </p>
               </motion.div>
@@ -107,7 +110,7 @@ const Home = () => {
 
       {/* Stats Section */}
       <motion.section
-        className="py-12 bg-purple-700 text-white shadow-xl"
+        className="py-20 bg-purple-700 text-white shadow-xl" // Increased py
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
