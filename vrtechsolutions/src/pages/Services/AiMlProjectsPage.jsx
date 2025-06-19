@@ -201,7 +201,11 @@ const AiMlProjects = () => {
                         viewport={{ once: true }}
                         // Transition for the whileInView properties (initial appearance)
                         transition={{
-                          duration: 1, delay: i * 0.1, type: "spring", stiffness: 100, damping: 12
+                          duration: 1, delay: i * 0.1, type: "spring", stiffness: 100, damping: 12,
+                          boxShadow: { // Target boxShadow specifically
+                            ...repeatingBoxShadowTransition, // Use predefined repeating transition
+                            delay: 1 + i*0.12 // Stagger the start of repeating animation
+                          }
                         }}
                         // Animate prop for continuous animations AFTER whileInView completes
                         animate={{
@@ -214,12 +218,6 @@ const AiMlProjects = () => {
                         // Specific transition for the 'animate.boxShadow' property
                         custom={{ // Pass delay to custom prop for staggered repeating animation
                            delay: 1 + i * 0.1 // Stagger the start of repeating animation
-                        }}
-                        transition={{ // This transition applies to the 'animate' prop
-                           boxShadow: { // Target boxShadow specifically
-                             ...repeatingBoxShadowTransition, // Use predefined repeating transition
-                             delay: 1 + i*0.12 // Stagger the start of repeating animation
-                           }
                         }}
                       />
                     ))}
@@ -245,14 +243,13 @@ const AiMlProjects = () => {
                       initial={{ scale: 0, opacity: 0 }}
                       whileInView={{ scale: 1, opacity: 1 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.8, delay: 2, type: "spring", stiffness: 100 }} // Adjusted delay
+                      transition={{ duration: 0.8, delay: 2, type: "spring", stiffness: 100,
+                        scale: { duration: 1.2, ease: "easeInOut", repeat: Infinity, delay: 2.1 } // Ensure continuous scale pulse
+                       }} // Adjusted delay
                       animate={{
                         scale: [1, 1.07, 1], // Subtle scale pulse
                       }}
                       custom={{ delay: 2.1 }} // Pass delay for staggered repeating animation
-                      transition={{
-                        scale: { duration: 1.2, ease: "easeInOut", repeat: Infinity, delay: 2.1 } // Ensure continuous scale pulse
-                      }}
                     >
                       <Brain className="h-8 w-8 text-white" />
                     </motion.div>
@@ -341,7 +338,9 @@ const AiMlProjects = () => {
                       initial={{ scale: 0, opacity: 0 }}
                       whileInView={{ scale: 1, opacity: 1 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.7, delay: 0.5, type: "spring", stiffness: 130 }} // Adjusted delay
+                      transition={{ duration: 0.7, delay: 0.5, type: "spring", stiffness: 130,
+                        boxShadow: { ...repeatingBoxShadowTransition, delay: 0.6 }
+                       }} // Adjusted delay
                       animate={{
                         boxShadow: [
                           "0 0 0px 0px rgba(34, 197, 94, 0.7)",
@@ -350,9 +349,6 @@ const AiMlProjects = () => {
                         ]
                       }}
                       custom={{delay: 0.6}}
-                      transition={{
-                        boxShadow: { ...repeatingBoxShadowTransition, delay: 0.6 }
-                      }}
                     />
                   </svg>
                 </div>
@@ -501,7 +497,9 @@ const AiMlProjects = () => {
                       initial={{ scale: 0, opacity: 0 }}
                       whileInView={{ scale: 1, opacity: 1 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.8, type: "spring", stiffness: 120 }} // Transition for whileInView
+                      transition={{ duration: 0.8, type: "spring", stiffness: 120,
+                        boxShadow: { ...repeatingBoxShadowTransition, delay: 0.9 } // Apply predefined repeating transition, stagger start
+                       }} // Transition for whileInView
                       animate={{ // Continuous animation for boxShadow
                         boxShadow: [
                           "0 0 0px 0px rgba(244, 114, 182, 0.7)",
@@ -511,9 +509,6 @@ const AiMlProjects = () => {
                       }}
                       // Specific transition for the 'animate.boxShadow' property
                       custom={{ delay: 0.9 }} // Used if your repeatingBoxShadowTransition uses custom for staggering
-                      transition={{ // This transition applies to the 'animate' prop
-                        boxShadow: { ...repeatingBoxShadowTransition, delay: 0.9 } // Apply predefined repeating transition, stagger start
-                      }}
                     >
                       <Eye className="h-8 w-8 text-pink-400" />
                     </motion.div>
