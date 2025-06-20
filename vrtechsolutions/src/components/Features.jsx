@@ -52,7 +52,7 @@ const Features = () => {
             viewport={{ once: true }} // Animate heading only once
             transition={{ duration: 0.7 }}
           >
-            “Our mission is to deliver precision in data and perfection in design, powered by AI.”
+            “Our mission is to deliver precision in data and perfection in design”
           </motion.h2>
         </div>
 

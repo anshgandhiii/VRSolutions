@@ -1,4 +1,3 @@
-"use client";;
 import { useState } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
@@ -27,7 +26,7 @@ export const Tabs = ({
     <>
       <div
         className={cn(
-          "flex flex-row items-center justify-start [perspective:1000px] relative overflow-auto sm:overflow-visible no-visible-scrollbar max-w-full w-full",
+          "flex flex-row items-center justify-center [perspective:1000px] relative overflow-hidden max-w-full w-full ",
           containerClassName
         )}>
         {propTabs.map((tab, idx) => (
@@ -47,7 +46,7 @@ export const Tabs = ({
                 layoutId="clickedbutton"
                 transition={{ type: "spring", bounce: 0.3, duration: 0.6 }}
                 className={cn(
-                  "absolute inset-0 bg-gray-200 rounded-full ",
+                  "absolute inset-0 bg-purple-300 rounded-full ",
                   activeTabClassName
                 )} />
             )}
