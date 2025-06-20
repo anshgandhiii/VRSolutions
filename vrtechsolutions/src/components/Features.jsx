@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 import FeatureShowcaseRow from '../components/FeatureShowcaseRow'; // Adjust path if needed
 
 // Import your new feature images
-import analyticsImage from '../assets/ai-travel.webp'; 
-import creativeImage from '../assets/ai-travel.webp'; 
-import deliveryImage from '../assets/ai-travel.webp';   
+import analyticsImage from '../assets/VR_AdvancedAnalytics.png'; 
+import creativeImage from '../assets/VR_CreativeExcellence.png'; 
+import deliveryImage from '../assets/VR_RapidDelivery.png';   
 
 const Features = () => {
   // Original feature data (without icons, as images will be used)
