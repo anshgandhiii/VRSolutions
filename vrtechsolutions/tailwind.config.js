@@ -123,7 +123,7 @@ module.exports = {
     },
   },
   plugins: [
-    require("tailwindcss-animate"),
+    require("tailwindcss-animate", '@tailwindcss/aspect-ratio'),
     plugin(function ({ addBase, addComponents, addUtilities }) {
       addBase({});
       addComponents({

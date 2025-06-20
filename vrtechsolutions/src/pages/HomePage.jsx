@@ -5,6 +5,8 @@ import About from '@/components/About';
 import Services from '@/components/Services';
 import HomePageServices from '@/components/HomePageServices';
 import Features from '@/components/Features';
+import OurWork from '@/components/OurWork';
+import { TabsDemo } from '@/components/Work';
 
 const HomePage = () => {
   return (
@@ -14,6 +16,7 @@ const HomePage = () => {
         <About />
         <div className="gradient-03 z-0" />
         <Features />
+        <TabsDemo />
         <HomePageServices />
       </div>
     </>
