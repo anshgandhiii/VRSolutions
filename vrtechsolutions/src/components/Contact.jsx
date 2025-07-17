@@ -26,7 +26,7 @@ function Contact() {
     setSubmitError(null); // Reset error
     
     try {
-      const response = await fetch("https://formspree.io/f/xvgkwjqe", { // Original Formspree URL
+      const response = await fetch("https://formspree.io/f/xzzekbrj", { // Original Formspree URL
         method: "POST",
         headers: { "Content-Type": "application/json", "Accept": "application/json" },
         body: JSON.stringify(formState)
